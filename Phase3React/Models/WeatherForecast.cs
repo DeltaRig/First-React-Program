@@ -1,6 +1,6 @@
 using System;
 
-namespace Phase3React
+namespace Phase3React.Models
 {
     public class WeatherForecast
     {
