@@ -5,6 +5,8 @@ import { Home } from './components/Home';
 import { FetchData } from './components/FetchData';
 import { Counter } from './components/Counter';
 import { Blog } from './components/Blog';
+import { SingIn } from './components/SingIn';
+import { SingUp } from './components/SingUp';
 
 import './custom.css'
 
@@ -16,17 +18,8 @@ export default class App extends Component {
       <Layout>
         <Route exact path='/' component={Home} />
             <Route path='/blog' component={Blog} />
-            <Route path='/singup' component={SingUp} />
-            // part of the cart
-                // select, delete, view and checkout
-            //search
-            <Route path='/admin/add' component={AddMedicine} />
-            <Route path='/admin/delete' component={DeleteMedicine} />
-            <Route path='/admin/update' component={UpdateMedicine} />
-            // Generate reports
             <Route path='/singin' component={SingIn} />
             <Route path='/singup' component={SingUp} />
-            // Logout
       </Layout>
     );
   }
