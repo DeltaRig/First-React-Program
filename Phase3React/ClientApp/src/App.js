@@ -15,9 +15,18 @@ export default class App extends Component {
     return (
       <Layout>
         <Route exact path='/' component={Home} />
-        <Route path='/counter' component={Counter} />
-        <Route path='/fetch-data' component={FetchData} />
-        <Route path='/blog' component={Blog} />
+            <Route path='/blog' component={Blog} />
+            <Route path='/singup' component={SingUp} />
+            // part of the cart
+                // select, delete, view and checkout
+            //search
+            <Route path='/admin/add' component={AddMedicine} />
+            <Route path='/admin/delete' component={DeleteMedicine} />
+            <Route path='/admin/update' component={UpdateMedicine} />
+            // Generate reports
+            <Route path='/singin' component={SingIn} />
+            <Route path='/singup' component={SingUp} />
+            // Logout
       </Layout>
     );
   }
