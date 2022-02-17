@@ -16,6 +16,13 @@ export class Posts extends Component {
                 author: '',
                 category: ''
             },
+            postCleared: {
+                id: 0,
+                title: '',
+                body: '',
+                author: '',
+                category: ''
+            },
             categories: [],
             /**
             categories: [
@@ -70,9 +77,21 @@ export class Posts extends Component {
         console.log('this:', this);
         //console.log('Form submitted:', this.state.post);
         this.setState((prevState) => {
-            const id = prevState.posts.length === 0 ? 1 : prevState.posts[prevState.posts.length - 1].id + 1;
-            const post = { ...this.state.post, id: id };
-            return { posts: [post, ...prevState.posts] };
+            if (this.state.post.id !== 0) {
+                let postIndex = this.state.posts.findIndex(p => p.id = this.state.post.id);
+                let posts = this.state.posts;
+                posts[postIndex] = this.state.post;
+                this.setState({ post: this.state.postCleared, post: posts })
+            } else {
+                const postId = prevState.posts.length === 0 ? 1 : prevState.posts[prevState.posts.length - 1].id + 1;
+                //const post = { ...this.state.post, id: postId };
+                //return { posts: [post, ...prevState.posts] };
+                let posts = this.state.posts;
+                let post = this.state.post;
+                post.id = postId;
+                posts.push(post);
+                this.setState({post: this.state.postCleared, posts: posts})
+            }
         });
     }
 
@@ -104,7 +123,17 @@ export class Posts extends Component {
         const post = this.state.post;
         this.setState({ post: { ...post, category: e.target.value } });
     }
- 
+
+    handlePostEditCallback = (postToEdit) => {
+        this.setState({ post: postToEdit });
+    }
+
+    handlePostDeleteCallback = (postId) => {
+        let postIndex = this.state.posts.findIndex(p => p.id === postId);
+        let posts = this.state.posts;
+        posts.splice(postIndex, 1);
+        this.setState({ posts: posts });
+    } 
 
     renderForm() {
         if (this.state.loadingCategories)
@@ -154,7 +183,8 @@ export class Posts extends Component {
             <div className="col-sm-8">
                 <h3>Posts</h3>
                 {this.state.posts.map((post) => {
-                    return <PostDetail key={post.id} post={post} />
+                    return <PostDetail key={post.id} post={post}
+                        parentEditCallback={this.handlePostEditCallback} parentDeleteCallbak={this.handlePostDeleteCallback} />
                 })}
             </div>
         );
