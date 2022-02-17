@@ -1,27 +1,25 @@
 # First-React-Program
 Full Stack Development .NET - Phase 3 – Introduction to Frontend and React - Simplilearn 
 
-## DESCRIPTION 
+# Online E-Health Care Management System.  
 
-### Project objective: 
+## Description: 
 
-As a React developer, you have been asked to develop a CRUD app using React with Context API for an online car rental company. 
+### Existing System 
 
-### Background of the problem statement: 
+The customer goes to the shop and purchases the medicine required. So, a lot of time is wasted and the person gets tired. If he wants to exchange the product, once again he goes to the shop and replaces them. The complete process depends on the physical interactions. 
 
-You are assigned to a project in which you need to develop a React app for an online car rental company. The app allows users to perform CRUD operations (create, read, update, and delete) on car details such as model name, brand name, price, and year of manufacture. 
+### Proposed System 
 
+As a result, the team decided to hire a Full Stack developer to develop a healthcare web application with a rich and user-friendly interface. 
+You are hired as the Full Stack Developer and are asked to develop the web application. The management team has provided you with the requirements and their business model so that you can easily arrange different components of the application. 
 
-## Following requirements are: 
+The customer selects the required medicines and orders them by a single click. Before it, the customer needs to create a login account and fill all the details like name, address, any id no…Etc.  The client can able to view the status of the medicines. The business goal for the application is to provide the medicines to all the people & admin will provide the supplier details. 
 
- - The app should have CRUD functionality 
+### Project Statement. 
 
- - Multiple components should be there for performing various functions 
+Create a dynamic and responsive e-healthcare web application for ordering medicines of different categories. 
 
-### Technologies:
+### Technologies: 
 
- - Visual Studio Code: An IDE to code for the application 
-
- - ReactJS: A frontend JavaScript library 
-
- - React-Router: A library to link multiple React app components 
+Frontend development: HTML5/CSS3, JavaScript using ES6 and React JS
